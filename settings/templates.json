@@ -1,0 +1,27 @@
+{
+  "sharethis":{
+    "fields":{
+      "email_name":["text","ExactTarget Email Name","SHAREABLE-CONTENT-2017-04-25","required"],
+      "email_subject":["text","ExactTarget Email Subject","Shareable Content: 'Your custom info here'","required"],
+      "header":["text","Title","Your Email Share Header","required"],
+      "share_link":["url","Link to Share","Enter link to share URL","required"],
+      "username":["select","User",
+        [
+        "bbernasconi",
+        "nkarvounis",
+        "smason"
+        ]
+      ],
+      "description":["textarea","Description",""],
+      "twitter_warning":["freetext","Be careful with your Twitter Lead-in. Try to avoid copying and pasting text as it could break your link. Ampersands (&) do not work. Always double check your twitter link before you send the email."],
+      "twitter_text":["textarea","Twitter Lead-in","","required"],
+      "linkedin_title":["text","LinkedIn Title", "", "required"],
+      "linkedin_src":["text","LinkedIn Source",""],
+      "linkedin_sum":["text","LinkedIn Summary"],
+      "image_url":["image","Image URL (drag image here)","input text drop-area","540","215"]
+    }
+  },
+  "research":{
+    "fields":"..."
+  }
+}
