@@ -19,7 +19,7 @@ header("Access-Control-Allow-Origin: *");
 				$data = base64_decode($data);
 				file_put_contents("upload/".$filename, $data);
 				$ET_file = "http://www.mylittleemailbuilder.com/upload/".$filename;
-				include '00-Includes/puttoportfolio.php';
+				include 'puttoportfolio.php';
 			}else if($uploadLocation == 'myleb_folder'){
         $today = date('Y_m');
         
