@@ -1,0 +1,27 @@
+<form id="send-html-form" action="/send" method="post">
+  <h3>Scheduler</h3>
+  <h4>Select Lists</h4>
+  <repeat group="{{ @lists }}" value="{{ @list }}"> {{ @list | raw }} </repeat>
+  <div>
+    <label>Enter your own ID:</label>
+    <input type="text" name="lists[]">
+  </div>
+  Enter Send Date:
+  <input id="datepicker" type="text" name="send_date" />
+  <br>
+  <div style="margin:20px 0 20px;" id="slider"></div>
+  <input type="text" name="time" id="time" />
+  <input type="hidden" name="email_name" id="email_name" value="{{ @fields.email_name}}"/>
+  <input type="hidden" name="email_subject" id="email_subject" value="{{ @fields.email_subject}}"/>
+  <input type="hidden" name="user_name" id="user_name" value="{{ @fields.user_name}}"/>
+  <input type="hidden" name="user_title" id="user_title" />
+  <input type="hidden" name="user_email" id="user_email" value="{{ @fields.user_email}}"/>
+  <input type="hidden" name="folder_id" id="folder_id" value="{{ @fields.folder_id}}"/>
+     
+  
+  
+  
+  
+  
+  <input style="clear:both;" type="submit" value="Send Email">
+</form>

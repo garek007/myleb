@@ -1,0 +1,61 @@
+
+<form class="form" title="tttdform" name="tttdform" method="post">
+<div class="row">
+<div class="first-col cols_12-6 column">
+	{{ @fields.email_name | raw }}
+
+</div>
+<div class="cols_12-6 column">
+{{ @fields.email_subject | raw }}
+</div>
+<div class="cols_12-4"></div>
+</div>
+
+<div class="row">
+	<div class="first-col cols_12-4 column">	{{ @fields.header | raw }} </div>
+  <div class="cols_12-4 column">  {{ @fields.share_link | raw }}  </div>
+  <div class="cols_12-4 column">
+{{ @fields.username| raw }}
+	</div>
+</div>
+
+<div class="row">
+  <div class="first-col cols_12-8 column">
+{{ @fields.description | raw }}
+
+		</div>
+  </div>
+
+<div class="row">
+  <div class="first-col cols_12-12 column">
+{{ @fields.twitter_warning | raw }}
+{{ @fields.twitter_text | raw }}
+    <div><span id="charcount">120</span> Characters Remaining</div>
+  </div>
+</div>
+<div class="row">
+  <div class="first-col cols_12-4 column">
+  {{ @fields.linkedin_title | raw }}
+  </div>
+  <div class="cols_12-4 column">
+  {{ @fields.linkedin_src | raw }}
+  </div>
+  <div class="cols_12-4 column">
+	{{ @fields.linkedin_sum | raw }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="first-col cols_12-6 column">
+	{{ @fields.image_url | raw }}
+  <label for="medium">Image URL (must be precropped to 540 pixels wide)</label>
+  <input class="input text drop-area" name="Iurl" type="text" size="25" data-width="540" data-height="215">
+  </div>
+</div>
+
+<div class="row">
+<input style="clear:both;float:none;" type="submit" value="Generate HTML" class="submit">
+</div>
+
+
+</form>

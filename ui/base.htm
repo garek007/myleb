@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <title>San Diego</title>
+    <link href="ui/css/main.css" type="text/css" rel="stylesheet">
+    <link href="ui/css/controls.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="ui/css/croppie.css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="headercontainer" class="headercontainer">
+        <div class="row" style="padding-bottom:0;">
+            <header id="header">
+                <a href="index.php">
+                    <img id="sitelogo" style="float:left;" src="ui/images/logo3.png" width="245" height="180" alt="" /></a>
+
+                <div class="nav">
+                    <a href="launchpad.php">Launchpad (needs fixing)</a>
+                    <a href="logout.php">Logout (needs fixing)</a>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="row first-row">
+      &nbsp;
+    </div>
+
+
+    <include href="{{ @content }}" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="ui/js/jquery.validate.min.js"></script>
+    <script src="ui/js/croppie.js"></script>
+    <script src="ui/js/scripts.js"></script>
+</body>
+
+</html>
