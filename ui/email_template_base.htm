@@ -26,6 +26,10 @@
   </div>
   <div class="row first-row">
     &nbsp;
+    <script>
+    if ("import" in document.createElement("link")) {
+  // This browser supports HTML5 Imports.
+    }</script>
   </div>
 
 <div id="control_panel" class="control_panel">
@@ -46,14 +50,16 @@
 
 
 <div class="row">
-<div id="send-html" class="first-col cols_12-12">
+<div class="first-col cols_12-12">
 
 
 
 
 
       <include href="email_template_start.htm" />
-                  <include href="{{ @content }}" />
+        <div id="send-html">
+          <include href="{{ @content }}" />
+        </div>
       <include href="email_template_end.htm" />
 
 

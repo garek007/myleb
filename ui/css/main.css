@@ -1,6 +1,4 @@
 
-
-
 /* tables */
 .tablesorter {
 	font-family:arial;
@@ -94,7 +92,7 @@ p,
 	font-family:robotoregular,sans-serif;
 	font-size:16px;
 	vertical-align:middle;
-	padding:3px;
+	padding:3px 0;
 }
 
 h1 a,
@@ -754,4 +752,9 @@ textarea {
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #aaa;
+}
+.input-wrapper{
+	float:left;
+	padding: 3px 3px 3px 0;
+	margin:7px 0;
 }

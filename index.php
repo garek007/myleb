@@ -92,7 +92,14 @@ $f3->route('GET /userref',
 $f3->route('GET /sharethis','GenerateFields->processFields');
 $f3->route('POST /sharethis','ShareThis->processFields');
 
+$f3->route('GET /research','GenerateFields->processFields');
+$f3->route('POST /research','Research->processFields');
+
 $f3->route('POST /send','SendExactTarget->send');
+
+
+
+
 
 $f3->route('GET /brew/@count',
     function($f3) {

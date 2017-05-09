@@ -1,8 +1,8 @@
 <?php
 require('vendor/exacttarget/exacttarget.php');
 $wsdl = 'https://webservice.s4.exacttarget.com/etframework.wsdl';
-$etusername = '';//Enter the username you use to login to Exact Target
-$etpassword = '';//Enter the password you use to login to Exact Target
+$etusername = 'salachniewicz';//Enter the username you use to login to Exact Target
+$etpassword = '750_BStreet!';//Enter the password you use to login to Exact Target
 //method
 
 

@@ -23,12 +23,17 @@ class GenerateFields{
         case "url":
         case "select":
         case "image":
+        case "radio":
           $fieldsArray[$fieldname] = makeField($fieldname,$field,$ftype);
           break;
         case "freetext":
-          $fieldsArray[$fieldname] = '<p>'.$field[1].'</p';
+          if($field[2]){
+            $fieldsArray[$fieldname] = '<'.$field[2].'>'.$field[1].'</'.$field[2].'>';
+          }else{
+            $fieldsArray[$fieldname] = '<p>'.$field[1].'</p>';
+          }
           break;
-        default: echo "not working";break;
+        default: echo "ERROR: Field type not setup in GenerateFields.php";break;
       }
     }
 
@@ -46,6 +51,7 @@ function makeField($fname,$f,$ftype){
 $field='<label for="'.$fname.'">'.$f[1].'</label>';
 if(!empty($f[2])){
   $p = 'placeholder="'.$f[2].'"';
+  $p .= 'value="'.$f[2].'"';
 }
 if($f[3]=="required"){
   $r = "required";
@@ -76,9 +82,17 @@ switch($ftype){
     }
     $field.='data-width="'.$f[3].'" data-height="'.$f[4].'" ';
     break;
+  case "radio":
+    $radio = true;
+    foreach($f[4] as $option){
+      $field .= '<div class="input-wrapper"><input name="'.$fname.'" type="radio" value="'.$option.'">'.$option.'</div>';
+    }
+
+    break;
   default:break;
 }
-$field.='>';
+if($radio == false){ $field.='>'; }
+
 
 return $field;
 

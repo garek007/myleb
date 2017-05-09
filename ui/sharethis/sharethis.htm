@@ -90,31 +90,12 @@
 											<tr>
 												<!-------TWITTER BEGIN------->
 												<td width="50%" style="padding-right: 5px;" valign="top">
-												<table width="100%" border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td class="imagecont" style="padding-bottom: 10px;">
-															<!----------TWITTER LINK---------->
-															<a href="{{ @fields.twitter_link }}">
-															<img class="fullwidth" src="http://image.updates.sandiego.org/lib/fe9e15707566017871/m/3/icon-social-twitter.png" border="0" style="display: block; height: auto !important;" width="127" />
-															</a></td>
-														</tr>
-													</tbody>
-												</table>
+											   <include href="sharethis/twitter.htm" />
 												</td>
 												<!-------TWITTER END------->
 												<!-------FACEBOOK BEGIN------->
 												<td width="50%" style="padding-left: 5px;" valign="top">
-												<table width="100%" border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td class="imagecont" style="padding-bottom: 10px;">
-															<!----------FACEBOOK LINK----------><a href="{{ @fields.facebook_link }}">
-															<img class="fullwidth" src="http://image.updates.sandiego.org/lib/fe9e15707566017871/m/3/icon-social-facebook.png" border="0" style="display: block; height: auto !important;" width="127" />
-															</a></td>
-														</tr>
-													</tbody>
-												</table>
+												 <include href="sharethis/facebook.htm" />
 												</td>
 											</tr>
 										</tbody>
@@ -127,30 +108,12 @@
 										<tbody>
 											<tr>
 												<td width="50%" style="padding-right: 5px;" valign="top">
-												<table width="100%" border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td class="imagecont" style="padding-bottom: 10px;">
-															<!----------GOOGLE PLUS LINK----------><a href="{{ @fields.googleplus_link }}">
-															<img class="fullwidth" src="http://image.updates.sandiego.org/lib/fe9e15707566017871/m/3/icon-social-googleplus.png" border="0" style="display: block; height: auto !important;" width="127" />
-															</a></td>
-														</tr>
-													</tbody>
-												</table>
+												 <include href="sharethis/google.htm" />
 												</td>
 												<!-------GOOGLE PLUS END------->
 												<!-------LINKED IN BEGIN------->
 												<td width="50%" style="padding-left: 5px;" valign="top">
-												<table width="100%" border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td class="imagecont" style="padding-bottom: 10px;">
-															<!----------LINKED IN LINK----------><a href="{{ @fields.linkedin_link }}">
-															<img class="fullwidth" src="http://image.updates.sandiego.org/lib/fe9e15707566017871/m/3/icon-social-linkedin.png" border="0" style="display: block; height: auto !important;" width="127" />
-															</a></td>
-														</tr>
-													</tbody>
-												</table>
+												 <include href="sharethis/linkedin.htm" />
 												</td>
 												<!-------LINKED IN END------->
 											</tr>
@@ -171,7 +134,7 @@
 
 
 
-<check if="{{ @fields.Iurl }}">
+<check if="{{ @fields.image_url }}">
 	<true>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tbody>
@@ -182,7 +145,7 @@
 					<tr>
 						<td style="padding-top: 29px;">
 						<p><a href="{{ @fields.share_link }}" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 16px; color: #434448; padding-top: 5px;">SEE WHAT YOU ARE SHARING</a></p>
-						<img class="fullwidth" src="{{ @fields.Iurl }}" width="540" border="0" style="display: block; height: auto !important;" /></td>
+						<img class="fullwidth" src="{{ @fields.image_url }}" width="540" border="0" style="display: block; height: auto !important;" /></td>
 					</tr>
 				</tbody>
 			</table>
