@@ -1,0 +1,186 @@
+<div class="row">
+	<div class="drop-area csv" style="padding:25px;background:#ddd;text-align:center;">Drop CSV here</div>
+</div>
+<form class="form" title="tttdform" name="tttdform" method="post">
+	<div class="row">
+		<div class="first-col cols_12-6 column">
+			{{ @fields.email_name | raw }}
+
+		</div>
+		<div class="cols_12-6 column">
+			{{ @fields.email_subject | raw }}
+		</div>
+		<div class="cols_12-4"></div>
+	</div>
+
+	<div class="row">
+		<div class="first-col cols_12-4 column"> {{ @fields.header | raw }} </div>
+		<div class="cols_12-4 column"> {{ @fields.share_link | raw }} </div>
+		<div class="cols_12-4 column">
+			{{ @fields.username| raw }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="first-col cols_12-12 column">
+			{{ @fields.description | raw }}
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="first-col cols_12-8 column">
+
+			{{ @fields.full_month_name | raw }}
+			<h2>Enter information for the month in the fields below. </h2>
+			<h4>Don't enter the % symbol in the % Change box. It is added automatically. But DO enter the M or K or % symbol in the main number box.</h4>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="first-col cols_24-3"> {{ @fields.total_visitors | raw }} </div>
+		<div class="cols_24-2"> {{ @fields.total_visitors_chg | raw }} </div>
+		<div class="cols_24-3"> {{ @fields.visitor_spending | raw }}</div>
+		<div class="cols_24-2"> {{ @fields.visitor_spending_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.large_attr_att | raw }}</div>
+		<div class="cols_24-2">{{ @fields.large_attr_att_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.airport_arrivals | raw }}</div>
+		<div class="cols_24-2">{{ @fields.airport_arrivals_chg | raw }}</div>
+	</div>
+	<div class="row">
+		<div class="first-col cols_24-3">{{ @fields.occupancy_rate | raw }}</div>
+		<div class="cols_24-2">{{ @fields.occupancy_rate_chg | raw }}</div>
+		<div class="cols_24-3">{{ @fields.adr | raw }}</div>
+		<div class="cols_24-2">{{ @fields.adr_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.sdcc_attendance | raw }}</div>
+		<div class="cols_24-2">{{ @fields.sdcc_attendance_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.sdcc_room_nights | raw }}</div>
+		<div class="cols_24-2">{{ @fields.sdcc_room_nights_chg | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h2>Data for each region for the month.</h2>
+		<p>Don't enter the % symbol.</p>
+		<h3>{{ @fields.reg_downtown_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_downtown_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_downtown_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_downtown_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_downtown_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_mv_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_mv_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mv_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mv_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mv_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_mb_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_mb_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mb_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mb_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_mb_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_ljc_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_ljc_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_ljc_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_ljc_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_ljc_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_pl_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_pl_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_pl_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_pl_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_pl_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_utc_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_utc_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_utc_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_utc_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_utc_adry | raw }}</div>
+	</div>
+
+	<div class="row">
+		<h3>{{ @fields.reg_I15_intro | raw }}</h3>
+		<div class="first-col cols_12-3">{{ @fields.reg_I15_occ | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_I15_occy | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_I15_adr | raw }}</div>
+		<div class="cols_12-3">{{ @fields.reg_I15_adry | raw }}</div>
+	</div>
+
+
+
+
+	<div class="row">
+				<h3>Year to Date Performance</h3>
+		<div class="first-col cols_24-3"> {{ @fields.ytd_total_visitors | raw }} </div>
+		<div class="cols_24-2"> {{ @fields.ytd_total_visitors_chg | raw }} </div>
+		<div class="cols_24-3"> {{ @fields.ytd_visitor_spending | raw }}</div>
+		<div class="cols_24-2"> {{ @fields.ytd_visitor_spending_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.ytd_large_attr_att | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_large_attr_att_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.ytd_airport_arrivals | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_airport_arrivals_chg | raw }}</div>
+	</div>
+	<div class="row">
+		<div class="first-col cols_24-3">{{ @fields.ytd_occupancy_rate | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_occupancy_rate_chg | raw }}</div>
+		<div class="cols_24-3">{{ @fields.ytd_adr | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_adr_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.ytd_sdcc_attendance | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_sdcc_attendance_chg | raw }}</div>
+		<div class="cols_24-5">{{ @fields.ytd_sdcc_room_nights | raw }}</div>
+		<div class="cols_24-2">{{ @fields.ytd_sdcc_room_nights_chg | raw }}</div>
+	</div>
+
+
+
+
+
+
+
+
+	<div class="row">
+		<div class="first-col cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+	</div>
+
+	<div class="row">
+		<div class="first-col cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+	</div>
+
+	<div class="row">
+		<div class="first-col cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+		<div class="cols_12-3"></div>
+	</div>
+
+	{{ @fields.region_info | raw }}
+
+
+
+
+
+
+
+
+	<div class="row">
+		<input style="clear:both;float:none;" type="submit" value="Generate HTML" class="submit">
+	</div>
+
+
+</form>
