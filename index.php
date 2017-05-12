@@ -10,10 +10,11 @@ if ((float)PCRE_VERSION<7.9)
 
 // Load configuration
 $f3->config('config.ini');
-
+//Home page view
 $f3->route('GET /',
-	function(){
-		echo 'Hello, world!';
+	function($f3){
+    $f3->set('content','home.htm');
+    echo Template::instance()->render('base.htm');
 	}
 );
 /*
@@ -98,8 +99,34 @@ $f3->route('POST /research','Research->processFields');
 $f3->route('POST /send','SendExactTarget->send');
 
 
-
-
+$f3->route('GET /logout',
+  function($f3){
+  echo $f3->get('SESSION.pass');
+  $f3->clear('SESSION.pass');
+  session_commit();
+    var_dump($f3);
+    
+    //$auth->logout();
+  }
+);
+$f3->route('POST /login',
+  function($f3){
+    $data = $f3->get('POST');
+    var_dump($data);
+    $db = new \DB\Jig ( 'settings/' , \DB\Jig::FORMAT_JSON );
+    $user= new \DB\Jig\Mapper($db, 'users.json');
+    $auth = new \Auth($user, array('id' => 'username', 'pw' => 'password'));
+    $login_result = $auth->login($data['username'],$data['password']); // returns true on successful login  
+    if($login_result){
+      $f3->set('content','dashboard.htm');
+      $f3->set('SESSION.pass', 'wtf');
+      echo Template::instance()->render('base.htm');
+    }else{
+      echo "Username or password not correct, please go back and try again.";
+      //echo Template::instance()->render('base.htm');      
+    }
+  }
+);
 
 $f3->route('GET /brew/@count',
     function($f3) {
@@ -107,12 +134,11 @@ $f3->route('GET /brew/@count',
     }
 );
 
-$db = new \DB\Jig ( 'settings/' , \DB\Jig::FORMAT_JSON );
-$user= new \DB\Jig\Mapper($db, 'users.json');
-$auth = new \Auth($user, array('id' => 'username', 'pw' => 'password'));
-$login_result = $auth->login('salachniewicz','valerie'); // returns true on successful login
+
 //echo $login_result;
-$auth->basic();
+
+
+//$auth->basic();
 //$data = $db->read('users.json');
 //echo $data['salachniewicz']['name'];
 
