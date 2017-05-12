@@ -1,7 +1,7 @@
 {
   "sharethis":{
     "fields":{
-      "email_name":["text","ExactTarget Email Name","SHAREABLE-CONTENT-2017-04-25","required"],
+      "email_name":["text","ExactTarget Email Name","SHAREABLE-CONTENT:","required"],
       "email_subject":["text","ExactTarget Email Subject","Shareable Content: 'Your custom info here'","required"],
       "header":["text","Title","Your Email Share Header","required"],
       "share_link":["url","Link to Share","Enter link to share URL","required"],
@@ -40,7 +40,7 @@
       "occupancy_rate_chg":["text","% Change","0.0","required"],
       "adr":["text","ADR","","required"],
       "adr_chg":["text","% Change","0.0","required"],
-      "sdcc_attendance":["text","SDCC Attendance","","required"],
+      "sdcc_attendance":["text","SDCC Attendees","","required"],
       "sdcc_attendance_chg":["text","% Change","0.0","required"],
       "sdcc_room_nights":["text","SDCC Contracted Room Nights","","required"],
       "sdcc_room_nights_chg":["text","% Change","0.0","required"],

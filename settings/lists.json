@@ -4,5 +4,6 @@
     "always":["Always Send To",299500],
     "nick":["Nick Only",300512],
     "stan":["Stan Only",384277],
-    "brent":["Brent Only",307955]
+    "brent":["Brent Only",307955],
+    "research":["Research", 674411]
 }
