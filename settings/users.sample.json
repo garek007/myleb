@@ -1,0 +1,13 @@
+{
+  "salachniewicz":{
+    "name":"Stan Alachniewicz",
+    "title":"Master of the Universe",
+    "email":"email@email.com",
+    "phone":"619-557-5555",
+    "twitterhash":"@gareksd",
+    "twitterlink":"https://twitter.com/gareksd",
+    "list_access":["members","staff","always","nick","stan","brent","research"],
+    "username":"username",
+    "password":"password"
+  }
+}
