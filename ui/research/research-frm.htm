@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="drop-area csv" style="padding:25px;background:#ddd;text-align:center;">Drop CSV here</div>
+	<div class="drop-area csv" style="padding:25px;background:#ddd;text-align:center;" data-type="csv">Drop CSV here</div>
 </div>
 <form class="form" title="tttdform" name="tttdform" method="post">
 	<div class="row">
@@ -149,10 +149,9 @@
 
 
 	<div class="row">
-		<div class="first-col cols_12-3"></div>
-		<div class="cols_12-3"></div>
-		<div class="cols_12-3"></div>
-		<div class="cols_12-3"></div>
+	<h3>Fun Fact</h3>
+		<div class="first-col cols_12-6">{{ @fields.image_url | raw }}</div>
+		<div class="cols_12-6">{{ @fields.fun_fact_text | raw }}</div>
 	</div>
 
 	<div class="row">

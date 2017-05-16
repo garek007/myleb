@@ -17,7 +17,7 @@ function getQueryVariable(variable) {
 }
 
 $(document).ready(function() {
-
+/*
     var $container = $("#container");
 
     if ($container.hasClass("new_project")) {
@@ -32,170 +32,11 @@ $(document).ready(function() {
 
         });
 
-
     }
-    function processData(csv) {
-        var allTextLines = csv.split(/\r\n|\n/);
-        var lines = [];
-        for (var i=0; i<allTextLines.length; i++) {
-            var data = allTextLines[i].split(';');
-                var tarr = [];
-                for (var j=0; j<data.length; j++) {
-                    tarr.push(data[j]);
-                }
-                lines.push(tarr);
-        }
-      console.log(lines);
-    }
-
-
-    //Drag n Drop Stuff
-    $(document).delegate(".drop-area", 'dragenter', function(e) {
-        e.preventDefault();
-        //$(this).css('background', '#BBD5B8');
-        $(this).css('border', '1px solid red');
-    });
-    $(document).delegate(".drop-area", 'dragleave', function(e) {
-        e.preventDefault();
-        $(this).css('border', 'none');
-    });
-    $(document).delegate(".drop-area", 'dragover', function(e) {
-        e.preventDefault();
-    });
-    var $uploadCrop;
-    var imageName;
-    var $uploadLocation = 'myleb_folder';
-    $(document).delegate('.drop-area', 'drop', function(e) {
-      e.preventDefault();
-      $(this).css('border', 'none');
-      //get type of file dropped
-      var $me = $(this);
-
-      var reader = new FileReader();
-      var csv = e.originalEvent.dataTransfer.files[0];
-      //console.log(csv);
-      reader.readAsText(csv);
-      //console.log(reader);
-      reader.onload = function(e) {
-        var file = e.target.result;
-        var allTextLines = file.split(/\r\n|\n/);
-        var lines = [];
-        for (var i=0; i<allTextLines.length; i++) {
-            var thisLine = allTextLines[i].split(',');
-              console.log(thisLine[0]);
-              $('input[name="' + thisLine[0] + '"]').val(thisLine[1]);
+    */
 
 
 
-                var tarr = [];
-                for (var j=0; j<thisLine.length; j++) {
-                    tarr.push(thisLine[j]);
-                }
-                //console.log(tarr);
-                lines.push(tarr);
-        }
-
-
-      }
-      if($me.hasClass("csv")){
-
-      }else{
-
-
-
-
-        //if($(this).is('.cloudinary')){$uploadLocation = 'cloudinary';}
-        //$uploadLocation = 'cloudinary';
-        //$(this).css('background', '#D8F9D3');
-
-
-        //var image = e.originalEvent.dataTransfer.files;
-        console.log(e.originalEvent.dataTransfer.files);
-        //createFormData(image);
-        $(this).addClass('activeImage');
-        var $w = $(this).data('width');
-        var $h = $(this).data('height');
-        var image = e.originalEvent.dataTransfer.files[0];
-        //console.log(e.originalEvent.dataTransfer.files[0]);
-        //console.log(e.originalEvent.dataTransfer.files[1]);
-        //imageName = Date.now() + image.name;
-        imageName = new Date().getUTCMilliseconds() + image.name;
-
-        $('#cropbox').show();
-
-        $uploadCrop = $('#cropbox').croppie({
-            viewport: {
-                width: $w,
-                height: $h
-            },
-            boundary: {
-                width: $w + 100,
-                height: $h + 100
-            }
-        });
-        $('#viewport_height').slider('value', $(".cr-viewport").outerHeight());
-        $(".viewport_height_value").text($(".cr-viewport").outerHeight());
-        // if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        console.log(reader);
-        reader.onload = function(e) {
-            console.log('wtf ' + imageName);
-            $uploadCrop.croppie('bind', {
-                url: e.target.result
-            });
-        }
-        reader.readAsDataURL(image);
-        // }
-
-        $('.upload-cancel').on('click', function(ev) {
-            $('#cropbox').fadeOut('fast');
-            $uploadCrop.croppie('destroy');
-            $('.activeImage').css('border', 'none');
-            $('.activeImage').removeClass('activeImage');
-
-        });
-
-      }//end file type check
-    });
-
-    $('.upload-result').on('click', function(ev) {
-        $uploadCrop.croppie('result', {
-            type: 'canvas',
-            size: 'viewport',
-            format: 'jpeg'
-        }).then(function(resp) {
-            console.log(typeof imageName);
-
-            $('.fa-spinner').fadeIn();
-            $.ajax({
-                url: "/processUploads2.php",
-                type: "POST",
-                data: {
-                    'file': resp,
-                    'imagename': imageName,
-                    'uploadLocation': $uploadLocation
-                },
-                dataType: 'json',
-            }).done(function(data) {
-                $('#cropbox').fadeOut('slow', function() {
-                    //$('.activeImage').attr('src', 'http://image.updates.sandiego.org/lib/fe9e15707566017871/m/4/' + imageName);
-                    var $target = $(".activeImage");
-                    if ($target.is(":input")) {
-                        $target.val(data['url']);
-                    } else {
-                        $target.attr('src', data['url']);
-                    }
-
-                    $target.removeClass('activeImage');
-                    $uploadCrop.croppie('destroy');
-                    $('.fa-spinner').fadeOut();
-                });
-            }).fail(function(data) {
-                alert("there was a problem uploading your image");
-                console.log(data);
-            });
-        });
-    });
 
     $(".form").validate();
     $('#twitter_text').on('keyup', function() {

@@ -5,7 +5,7 @@ class sharethis{
   {
     $loggedin_user = $f3->get('SERVER.PHP_AUTH_USER');
     $data = $f3->get('POST');
-   
+
 
     $sharelink = $_POST['share_link'];
     $twitter_text = htmlspecialchars_decode($_POST['twitter_text']);

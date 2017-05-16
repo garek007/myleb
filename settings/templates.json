@@ -18,7 +18,7 @@
       "linkedin_title":["text","LinkedIn Title", "", "required"],
       "linkedin_src":["text","LinkedIn Source",""],
       "linkedin_sum":["text","LinkedIn Summary"],
-      "image_url":["image","Image URL (drag image here)","input text drop-area","540","215"]
+      "image_url":["drop","Image URL (drag image here)","input text drop-area","540","215","image"]
     }
   },
   "research":{
@@ -95,7 +95,9 @@
       "ytd_sdcc_attendance":["text","SDCC Attendance","","required"],
       "ytd_sdcc_attendance_chg":["text","% Change","0.0","required"],
       "ytd_sdcc_room_nights":["text","SDCC Contracted Room Nights","","required"],
-      "ytd_sdcc_room_nights_chg":["text","% Change","0.0","required"]
+      "ytd_sdcc_room_nights_chg":["text","% Change","0.0","required"],
+      "image_url":["drop","Fun Fact Image (drag image here)","input text drop-area","265","200","image"],
+      "fun_fact_text":["text","Fun Fact"]
     }
   }
 }

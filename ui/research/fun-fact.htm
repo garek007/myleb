@@ -26,7 +26,13 @@
 						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="ui-sortable-handle">
 							<tbody>
 								<tr>
-									<td class="imagecont" style="padding-bottom: 10px;"><img class="fullwidth" src="http://image.updates.sandiego.org/lib/fe9e15707566017871/m/5/205Baby Beluga -Courtesy SeaWorld.JPG" border="0" style="display: block; height: auto !important;" width="265"></td>
+									<td class="imagecont" style="padding-bottom: 10px;">
+									
+									<img class="fullwidth" src="{{ @fields.image_url | raw }}" border="0" style="display: block; height: auto !important;" width="265">
+					
+									
+									
+									</td>
 								</tr>
 								
 							</tbody>
@@ -49,7 +55,7 @@
 									</font></td>
 								</tr>
 								<tr>
-									<td class="description" align="left" style="font-family: Helvetica, Arial, sans-serif; font-size: 18px; color: #434448; padding-top: 5px;">Overnight Leisure Visitors say that theme parks and attractions are the most influential activity in determining if they will visit or extend their stay in San Diego.  Relaxing at the beach came in second.</td>
+									<td class="description" align="left" style="font-family: Helvetica, Arial, sans-serif; font-size: 18px; color: #434448; padding-top: 5px;">{{ @fields.fun_fact_text | raw }}</td>
 								</tr>
 							</tbody>
 						</table>

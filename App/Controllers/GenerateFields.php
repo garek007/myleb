@@ -22,7 +22,7 @@ class GenerateFields{
         case "textarea":
         case "url":
         case "select":
-        case "image":
+        case "drop":
         case "radio":
           $fieldsArray[$fieldname] = makeField($fieldname,$field,$ftype);
           break;
@@ -75,12 +75,14 @@ switch($ftype){
     }
     $field.='</select';
     break;
-  case "image":
+  case "drop":
+
     $field .='<input '.$name_id.' type="text"';
     if(!empty($f[2])){
       $field.= 'class="'.$f[2].'"';
     }
     $field.='data-width="'.$f[3].'" data-height="'.$f[4].'" ';
+    $field.='data-type="'.$f[5].'" ';
     break;
   case "radio":
     $radio = true;
