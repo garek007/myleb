@@ -3,7 +3,9 @@
 class sharethis{
   public function processFields($f3)
   {
-    $loggedin_user = $f3->get('SERVER.PHP_AUTH_USER');
+
+    //$loggedin_user = $f3->get('SERVER.PHP_AUTH_USER');
+    $loggedin_user = $f3->get('SESSION.user');
     $data = $f3->get('POST');
 
 

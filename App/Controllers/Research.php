@@ -3,10 +3,11 @@
 class research{
   public function processFields($f3)
   {
-    $loggedin_user = $f3->get('SERVER.PHP_AUTH_USER');
+    //$loggedin_user = $f3->get('SERVER.PHP_AUTH_USER');
+    $loggedin_user = $f3->get('SESSION.user');
     $data = $f3->get('POST');
     $data['description'] = nl2br(trim($f3->get('POST.description')));
- 
+
     $perfFields = ["total_visitors","visitor_spending","large_attr_att","airport_arrivals","occupancy_rate","adr","sdcc_attendance","sdcc_room_nights"];
 
     foreach($perfFields as $field){
@@ -42,7 +43,7 @@ class research{
     $data['user_twitterhash'] = $user->twitterhash;
     $data['user_twitterlink'] = $user->twitterlink;
     $data['folder_id'] = 334647;//consider adding this to templates.json//this is where the email gets saved in ET
-    
+
 
 
     $json = $f3->read('settings/lists.json');

@@ -3,6 +3,9 @@
 class GenerateFields{
   public function processFields($f3)
   {
+
+
+
     $info = $f3->get('PARAMS');
     $template = str_replace('/','',$info[0]);
 
@@ -40,7 +43,7 @@ class GenerateFields{
     $f3->set('fields',$fieldsArray);
     $f3->set('content',$template.'/'.$template.'-frm.htm');
 		echo Template::instance()->render('base.htm');
-
+    
 
   }
 }//end of class

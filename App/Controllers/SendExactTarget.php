@@ -3,6 +3,11 @@
 class sendexacttarget{
   public function send($f3)
   {
+    //for some reason this is not working when including files separately
+    //require('vendor/exacttarget/exacttarget_soap_client.php');
+    //require('vendor/exacttarget/xmlseclibs.php');
+    //require('vendor/exacttarget/soap-wsse.php');
+    require('vendor/exacttarget/exacttarget.php');
     //require('vendor/exacttarget/exacttarget_soap_client.php');
     $wsdl = 'https://webservice.s4.exacttarget.com/etframework.wsdl';
     $etusername = $f3->ETLOGIN;//Enter the username you use to login to Exact Target
@@ -10,7 +15,7 @@ class sendexacttarget{
 
     $folderID = $sendData['folder_id'];//need to make these dependent on template read from JSON
     parse_str($f3->get('POST.formData'),$sendData);//this is our formData access it via $sendData['field_name'];
-    
+
     //get the checked list inputs
     $myLists = array();
     foreach($sendData['lists'] as $list){
@@ -21,7 +26,7 @@ class sendexacttarget{
         $newList->IDSpecified = true;
         $myLists[] = $newList;
       }
-    }    
+    }
     //var_dump($sendData);
 
     $sender = new StdClass();
@@ -37,7 +42,7 @@ class sendexacttarget{
     $client->username = $etusername;
     $client->password = $etpassword;
 
-    
+
     $email = new ExactTarget_Email();
     $email->Name = $sendData['email_name'];
     $email->Description = 'Email from MyLittleEmailBuilder.com';
@@ -54,12 +59,12 @@ class sendexacttarget{
     $sendDate = strtotime("+10 seconds");
     //If I wanted to create the email separately
     //$object = new SoapVar($email, SOAP_ENC_OBJECT, 'Email', "http://exacttarget.com/wsdl/partnerAPI");
-    
+
     //$emailSendDef = new ExactTarget_EmailSendDefinition();
     //$emailSendDef->CustomerKey = "333333";
     //$emailSendDef->Name = "Shareable Content Send";
 
-    
+
     $send = new ExactTarget_Send();
     $send->Email = $email;
     $send->List = $myLists;
@@ -68,8 +73,8 @@ class sendexacttarget{
     $send->FromName = $sender->name;
     //$send->EmailSendDefinition = $emailSendDef;
     $send->UniqueOpens = '500';
-    
-    
+
+
 
 
     $object = new SoapVar($send, SOAP_ENC_OBJECT, 'Send', "http://exacttarget.com/wsdl/partnerAPI");
@@ -84,18 +89,18 @@ class sendexacttarget{
     $results = $client->Create($request);
     $response = $results->Results->StatusCode;
     $msg = $results->Results->StatusMessage;
-    
+
     if($response != "OK"){
       $response = "ERROR: ".$msg.". Check Chrome console for details.";
     }
 
 
-    
+
     $vars = 	array(
       'results'=> $results,
       'statusCode' => $response,
     );
-    echo json_encode($vars);    
+    echo json_encode($vars);
 
 
   }
