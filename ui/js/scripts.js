@@ -84,21 +84,7 @@ $(document).ready(function() {
         }
     });
 
-    //CONTROL PANEL
-    $("#viewport_height").slider({
-        range: "min",
-        orientation: "vertical",
-        min: 0,
-        max: 250,
-        step: 5,
-        slide: function(event, ui) {
-            //$( "#amount" ).val( ui.value );
-            $('.cr-viewport').css({
-                'height': ui.value
-            });
-            $('.viewport_height_value').text(ui.value);
-        }
-    });
+
 
     //$('.blockme').sortable();
     $("#resize_control_panel").resizable({ //on resize, check cpanel width and change image size
@@ -148,7 +134,7 @@ $(document).ready(function() {
 
     $('#slider').slider({
         min: 0,
-        max: 1440,
+        max: 720,
         step: 15,
         slide: function(event, ui) {
             var hours = Math.floor(ui.value / 60);

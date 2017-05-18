@@ -34,7 +34,11 @@ class sendexacttarget{
     $sender->email = (!empty($sendData['user_email'])) ? $sendData['user_email'] : "SDINFO@sandiego.org";
     $sender->send_date = $sendData['send_date'];
     $sender->send_time = $sendData['time'];
-    $fulldatetime = $sender->send_date . ' ' . $sender->send_time;
+    $sender->send_period = $sendData['ampm'];
+
+
+
+    $fulldatetime = $sender->send_date . ' ' . $sender->send_time . ' ' . $sender->send_period;
     $sender->timestamp = strtotime($fulldatetime);
 
 

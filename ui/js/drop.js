@@ -81,6 +81,7 @@ function fadeOutCropbox(d,e){
 			$uploadCrop.croppie('bind', {
 				url: e.target.result
 			});
+      //$uploadCrop.croppie('setZoom', 100);
 		}
 		reader.readAsDataURL(image);
     console.log(reader.result);
@@ -157,8 +158,24 @@ function fadeOutCropbox(d,e){
 
 
 
+  //CONTROL PANEL
+  $("#viewport_height").slider({
+      range: "min",
+      orientation: "vertical",
+      min: 0,
+      max: 250,
+      step: 5,
+      slide: function(event, ui) {
+          //$( "#amount" ).val( ui.value );
+          $('.cr-viewport').css({
+              'height': ui.value
+          });
+          $('.cr-slider').attr({"min":1.0});
+          $('.viewport_height_value').text(ui.value);
+      }
+  });
 
-	$("#viewport_height").slider({
+	$("#viewport_height2").slider({
 			range: "min",
 			orientation: "vertical",
 			min: 0,
@@ -170,6 +187,8 @@ function fadeOutCropbox(d,e){
 				$('.cr-viewport').css({
 						'height': ui.value
 				});
+        console.log(".cr-slider");
+        $('.cr-slider').attr({"min":"1.0"});
 				$('.viewport_height_value').text(ui.value);
 
 			}
