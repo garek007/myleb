@@ -21,6 +21,32 @@
       "image_url":["drop","Image URL (drag image here)","input text drop-area","540","215","image"]
     }
   },
+  "pressrelease":{
+    "fields":{
+      "email_name":["text","ExactTarget Email Name","PRESS-RELEASE:","required"],
+      "email_subject":["text","ExactTarget Email Subject","Your custom info here","required"],
+      "language":["radio","Language",
+        [
+          ["English","PRESS RELEASE"],
+          ["Spanish","COMUNICADO DE PRENSA"]
+        ]
+      ],
+      "contacts":["checkbox","Contacts",
+        [
+          ["Robert","sigs-rarends"],
+          ["Edna","sigs-egutierrez"],
+          ["Joe","sigs-jtimko"],
+          ["Sarah","sigs-sweinberg"],
+          ["Candice","sigs-celey"]
+        ]
+      ],
+      "image_url_header":["drop","Header Image (drag image here)","input text drop-area","540","285","image"],
+      "header":["text","Title","Press Release Main Header","required"],
+      "description":["textarea","Content Block",""],
+      "zenfolio_link":["text","Zenfolio Link",""],
+      "image_url_thumb":["drop","Gallery Thumbnail (drag image here)","input text drop-area","540","215","image"]
+    }
+  },
   "research":{
     "fields":{
       "email_name":["text","ExactTarget Email Name","YYYY-MM-DD-Research Email","required"],
