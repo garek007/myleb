@@ -99,6 +99,7 @@ class sendexacttarget{
 
 
 
+
     $object = new SoapVar($send, SOAP_ENC_OBJECT, 'Send', "http://exacttarget.com/wsdl/partnerAPI");
 
     $request = new ExactTarget_CreateRequest();
