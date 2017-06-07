@@ -57,6 +57,23 @@ class sendexacttarget{
     $email->CategoryIDSpecified = true;
     $email->CategoryID = $sendData['folder_id'];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //sendEmail($email,$client, $lists,$sender);
 
     //$sendDate = strtotime("+1 minute");
@@ -77,7 +94,7 @@ class sendexacttarget{
     $send->FromName = $sender->name;
     //$send->EmailSendDefinition = $emailSendDef;
     $send->UniqueOpens = '500';
-
+    $send->IsTestObject = true;
 
 
 

@@ -14,7 +14,6 @@ class GenerateFields{
 	  $templates = json_decode($json);
 	  $fields = $templates->$template->fields;
     $fieldsArray = array();
-    var_dump($fields);
 
     foreach($fields as $fieldname => $field){
       $ftype = $field[0];

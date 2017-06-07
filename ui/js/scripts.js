@@ -135,11 +135,7 @@ $(document).ready(function() {
     });
 
 
-tinymce.init({
-  selector:'.tinymce' ,
-  toolbar: 'code newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript',
-  plugins: 'code paste'
-});
+
     //SHAREABLE STUFF BELOW
 
     $("#datepicker").datepicker();
