@@ -57,6 +57,23 @@ class sendexacttarget{
     $email->CategoryIDSpecified = true;
     $email->CategoryID = $sendData['folder_id'];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //sendEmail($email,$client, $lists,$sender);
 
     //$sendDate = strtotime("+1 minute");
@@ -67,7 +84,8 @@ class sendexacttarget{
     //$emailSendDef = new ExactTarget_EmailSendDefinition();
     //$emailSendDef->CustomerKey = "333333";
     //$emailSendDef->Name = "Shareable Content Send";
-
+    $sendDef = new ExactTarget_EmailSendDefinition();
+    $sendDef->$TestEmailAddr = "salachniewicz@sandiego.org";
 
     $send = new ExactTarget_Send();
     $send->Email = $email;
@@ -77,7 +95,7 @@ class sendexacttarget{
     $send->FromName = $sender->name;
     //$send->EmailSendDefinition = $emailSendDef;
     $send->UniqueOpens = '500';
-
+    $send->EmailSendDefinition = $sendDef;
 
 
 
