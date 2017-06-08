@@ -13,9 +13,6 @@ class pressrelease{
 
 
 
-    var_dump($data);
-
-
     $users = $f3->read('settings/users.json');
     $users = json_decode($users);
     $user = $users->$loggedin_user;
@@ -26,7 +23,7 @@ class pressrelease{
     $data['user_phone'] = $user->phone;
     $data['user_twitterhash'] = $user->twitterhash;
     $data['user_twitterlink'] = $user->twitterlink;
-    $data['folder_id'] = 338240;//consider adding this to templates.json//this is where the email gets saved in ET
+    $data['folder_id'] = 40560;//consider adding this to templates.json//this is where the email gets saved in ET
 
     $json = $f3->read('settings/lists.json');
     $lists = json_decode($json);
