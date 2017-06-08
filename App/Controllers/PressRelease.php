@@ -42,8 +42,6 @@ class pressrelease{
 
 
 
-
-
   }
 }//end of class
 
