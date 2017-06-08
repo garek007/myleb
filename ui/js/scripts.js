@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 
 
-    //$('.blockme').sortable();
+    $('.sortable').sortable();
     $("#resize_control_panel").resizable({ //on resize, check cpanel width and change image size
         handles: "w"
     });
@@ -124,7 +124,15 @@ $(document).ready(function() {
     });//end of submit delegate function
 
 
-
+    $("body").on("click",".add-another",function(){
+      var $me = $(this);
+      var $type = $me.attr("data-addType");
+      if($type == "row"){
+        var $dad = $me.closest(".row");
+        $dad.clone().insertAfter($dad);
+      }
+      console.log($type);
+    });
 
 
 

@@ -29,7 +29,7 @@ class research{
 
     }
 
-
+    $data['year'] = date("Y");
 
 
     $users = $f3->read('settings/users.json');

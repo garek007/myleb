@@ -27,6 +27,7 @@ class GenerateFields{
         case "select":
         case "drop":
         case "radio":
+        case "checkbox":
           $fieldsArray[$fieldname] = makeField($fieldname,$field,$ftype);
           break;
         case "freetext":
@@ -43,7 +44,7 @@ class GenerateFields{
     $f3->set('fields',$fieldsArray);
     $f3->set('content',$template.'/'.$template.'-frm.htm');
 		echo Template::instance()->render('base.htm');
-    
+
 
   }
 }//end of class
@@ -79,7 +80,6 @@ switch($ftype){
     $field.='</select';
     break;
   case "drop":
-
     $field .='<input '.$name_id.' type="text"';
     if(!empty($f[2])){
       $field.= 'class="'.$f[2].'"';
@@ -89,10 +89,15 @@ switch($ftype){
     break;
   case "radio":
     $radio = true;
-    foreach($f[4] as $option){
-      $field .= '<div class="input-wrapper"><input name="'.$fname.'" type="radio" value="'.$option.'">'.$option.'</div>';
+    foreach($f[2] as $option){
+      $field .= '<div class="input-wrapper"><input name="'.$fname.'" type="radio" value="'.$option[1].'">'.$option[0].'</div>';
     }
-
+    break;
+  case "checkbox":
+    $radio = true;
+    foreach($f[2] as $option){
+      $field .= '<div class="input-wrapper"><input name="'.$fname.'[]" type="checkbox" value="'.$option[1].'">'.$option[0].'</div>';
+    }
     break;
   default:break;
 }

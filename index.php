@@ -105,6 +105,9 @@ if($f3->get('SESSION.pass')=='750_BStreet!'){
 	$f3->route('GET /research','GenerateFields->processFields');
 	$f3->route('POST /research','Research->processFields');
 
+	$f3->route('GET /pressrelease','GenerateFields->processFields');
+	$f3->route('POST /pressrelease','PressRelease->processFields');
+
 	$f3->route('POST /send','SendExactTarget->send');
 }else{
 	$path = $f3->get('PATH');

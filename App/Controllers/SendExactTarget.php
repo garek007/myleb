@@ -95,7 +95,6 @@ class sendexacttarget{
     $send->FromName = $sender->name;
     //$send->EmailSendDefinition = $emailSendDef;
     $send->UniqueOpens = '500';
-    $send->EmailSendDefinition = $sendDef;
 
 
 
