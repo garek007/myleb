@@ -13,8 +13,18 @@ class sendexacttarget{
     $etusername = $f3->ETLOGIN;//Enter the username you use to login to Exact Target
     $etpassword = $f3->ETPASS;//Enter the password you use to login to Exact Target
 
-    $folderID = $sendData['folder_id'];//need to make these dependent on template read from JSON
+
     parse_str($f3->get('POST.formData'),$sendData);//this is our formData access it via $sendData['field_name'];
+
+    //if this is a test send we store in test folder, otherwise, real folder
+    if($sendData['send_test']){
+      $folder = 371004; //Test Send Folder
+    }else{
+      $folder = $sendData['folder_id'];//need to make these dependent on template read from JSON
+    }
+
+    
+
 
     //get the checked list inputs
     $myLists = array();
@@ -55,7 +65,7 @@ class sendexacttarget{
     $email->EmailType = 'HTML';
     $email->IsHTMLPaste = 'false';
     $email->CategoryIDSpecified = true;
-    $email->CategoryID = $sendData['folder_id'];
+    $email->CategoryID = $folder;
 
 
 
