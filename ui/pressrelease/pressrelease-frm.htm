@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-	<div class="first-col cols_12-4 column">	{{ @fields.header | raw }} </div>
+	<div class="first-col cols_12-8 column">	{{ @fields.header | raw }} </div>
   <div class="cols_12-4 column">
 {{ @fields.languages_remove_s_to_use | raw }}
 	</div>
@@ -20,7 +20,7 @@
 
 <loop from="{{ @i = 0 }}" to="{{ @i < 10 }}" step="{{ @i++ }}">
 	<div class="row">
-	  <div class="first-col cols_12-8 column">
+	  <div class="first-col cols_12-12 column">
 			<div class="content-block">
 				<label>Block header
 					<input type="text" name="block_header[]">
@@ -30,9 +30,7 @@
 				</label>
 			</div>
 		</div>
-		<div class="cols_12-4">
-			<input type="checkbox" name="bullets"> Use bullet
-		</div>
+
 	</div>
 </loop>
 

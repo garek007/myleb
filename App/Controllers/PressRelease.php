@@ -8,6 +8,11 @@ class pressrelease{
     $loggedin_user = $f3->get('SESSION.user');
     $data = $f3->get('POST');
 
+    $data['block_header'] = array_filter($data['block_header']);
+    $data['block_body'] = array_filter($data['block_body']);
+
+
+
     var_dump($data);
 
 

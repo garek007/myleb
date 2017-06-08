@@ -52,8 +52,12 @@
     <script>
     tinymce.init({
       selector:'.tinymce' ,
-      toolbar: 'code newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript',
-      plugins: 'code paste'
+      toolbar1: 'bold italic underline strikethrough styleselect formatselect fontselect fontsizeselect',
+      toolbar2: 'code cut copy paste bullist numlist outdent indent alignleft aligncenter alignright alignjustify blockquote undo redo removeformat subscript superscript',
+      plugins: 'code paste',
+      style_formats: [
+        {title: 'Email Heading Oswald', block: 'h2', styles: { 'padding-top': '15px', 'padding-bottom':'9px', 'font-size': '20px', color: '#55565a', 'line-height': '24px', 'font-weight':'normal', margin:'0px', 'font-family': 'Oswald, \'Arial Narrow\', Helvetica, Arial, sans-serif' }}
+      ]
     });
 
     </script>
