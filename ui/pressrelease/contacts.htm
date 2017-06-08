@@ -1,0 +1,68 @@
+<!-- CONTACTS 1 -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody>
+		<tr>
+			<td class="fullpad" style="padding: 0px 30px 9px;">
+			<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tbody>
+					<tr>
+						<td style="font-size: 18px; line-height: 24px; color: #007298;"><font style="font-family: 'Arial Narrow', Helvetica, sans-serif;">
+						<!--[if (!mso 14)&(!mso 15)]><!-->
+						<font style="font-family: Oswald, 'Arial Narrow', Helvetica, Arial, sans-serif;">
+						<!--<![endif]-->
+						YOUR LOCAL CONTACTS
+						<!--[if (!mso 14)&(!mso 15)]><!-->
+						</font>
+						<!--<![endif]-->
+						</font></td>
+						<td align="right">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+
+
+    <loop from="{{ @i = 0 }}" to="{{ @i < count(@fields.contacts) }}" step="{{ @i+=2 }}" >
+		<tr>
+			<td style="padding: 0px 30px 18px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+
+
+						<td style="padding-right: 15px;">
+              <include href="{{ 'pressrelease/'.@fields.contacts[@i].'.htm' }}" />
+						</td>
+
+
+						<td style="padding-right: 5px;" width="48%" valign="top" align="left">
+              <include if="{{ @fields.contacts[@i+1] }}" href="{{ 'pressrelease/'.@fields.contacts[@i+1].'.htm' }}" />
+						</td>
+
+
+
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- RULE 2 -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="removeme">
+	<tbody>
+		<tr bgcolor="#FFFFFF">
+			<td class="fullpad" style="padding: 0px 30px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 18px 0px 0px;">
+				<tbody>
+					<tr>
+						<td align="left" valign="top" style="border-top-width: 1px; border-top-style: solid; border-top-color: #ffffff; padding: 0px 0px 18px;"></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</loop>
