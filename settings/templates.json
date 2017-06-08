@@ -43,7 +43,7 @@
       "image_url_header":["drop","Header Image (drag image here)","input text drop-area","540","285","image"],
       "header":["text","Title","Press Release Main Header","required"],
       "description":["textarea","Content Block",""],
-      "zenfolio_link":["text","Zenfolio Link",""],
+      "zenfolio_link":["text","Zenfolio URL",""],
       "image_url_thumb":["drop","Gallery Thumbnail (drag image here)","input text drop-area","540","215","image"]
     }
   },
