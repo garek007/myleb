@@ -57,7 +57,12 @@
       plugins: 'code paste',
       style_formats: [
         {title: 'Email Heading Oswald', block: 'h2', styles: { 'padding-top': '15px', 'padding-bottom':'9px', 'font-size': '20px', color: '#55565a', 'line-height': '24px', 'font-weight':'normal', margin:'0px', 'font-family': 'Oswald, \'Arial Narrow\', Helvetica, Arial, sans-serif' }}
-      ]
+      ],
+      paste_preprocess: function(plugin,args){
+        console.log(plugin);
+        console.log(args);
+        
+      }
     });
 
     </script>

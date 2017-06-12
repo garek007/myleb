@@ -99,7 +99,7 @@ $(document).ready(function() {
         $.get("ui/email_template_start.htm", function(start) {
             $.get("ui/email_template_end.htm", function(end) {
                 $html = start + $("#send-html").html() + end;
-                console.log($html);
+                console.log(formData);
 
                 //console.log($html);
                 $.ajax({

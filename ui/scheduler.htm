@@ -17,7 +17,9 @@
     <option value="am">AM</option>
     <option value="pm">PM</option>
   </select>
-
+  <div class="input-wrapper" style="display:block;margin-top:10px;margin-bottom:10px;width:100%;">
+  <input type="checkbox" name="this_is_a_test" value="true" /> Test Email <br>
+  </div>
   <input type="hidden" name="email_name" id="email_name" value="{{ @fields.email_name}}"/>
   <input type="hidden" name="email_subject" id="email_subject" value="{{ @fields.email_subject}}"/>
   <input type="hidden" name="user_name" id="user_name" value="{{ @fields.user_name}}"/>
@@ -26,7 +28,5 @@
   <input type="hidden" name="folder_id" id="folder_id" value="{{ @fields.folder_id}}"/>
 
 
-  <input style="clear:both;margin-top:20px;margin-bottom:20px;" name="send_test" type="submit" value="Test">
-
-  <input style="clear:both;margin-top:20px;" name="send_real" type="submit" value="Send Email">
+  <input style="clear:both;margin-top:20px;" name="send_real" type="submit" value="Send">
 </form>

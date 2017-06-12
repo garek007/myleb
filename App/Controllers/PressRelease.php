@@ -11,6 +11,7 @@ class pressrelease{
     $data['block_header'] = array_filter($data['block_header']);
     $data['block_body'] = array_filter($data['block_body']);
 
+var_dump($data);
 
 
     $users = $f3->read('settings/users.json');

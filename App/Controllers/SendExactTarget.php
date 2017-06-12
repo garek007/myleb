@@ -16,16 +16,12 @@ class sendexacttarget{
 
     parse_str($f3->get('POST.formData'),$sendData);//this is our formData access it via $sendData['field_name'];
 
-    //if this is a test send we store in test folder, otherwise, real folder
-    if($sendData['send_test']){
-      $folder = 371004; //Test Send Folder
+    if($sendData['this_is_a_test']==true){
+      $folder = 371004;//need to make these dependent on template read from JSON
+      $sendData['email_subject'] = "[Test Send] ".$sendData['email_subject'];
     }else{
       $folder = $sendData['folder_id'];//need to make these dependent on template read from JSON
     }
-
-    
-
-
     //get the checked list inputs
     $myLists = array();
     foreach($sendData['lists'] as $list){
@@ -67,23 +63,6 @@ class sendexacttarget{
     $email->CategoryIDSpecified = true;
     $email->CategoryID = $folder;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //sendEmail($email,$client, $lists,$sender);
 
     //$sendDate = strtotime("+1 minute");
@@ -94,8 +73,7 @@ class sendexacttarget{
     //$emailSendDef = new ExactTarget_EmailSendDefinition();
     //$emailSendDef->CustomerKey = "333333";
     //$emailSendDef->Name = "Shareable Content Send";
-    $sendDef = new ExactTarget_EmailSendDefinition();
-    $sendDef->$TestEmailAddr = "salachniewicz@sandiego.org";
+
 
     $send = new ExactTarget_Send();
     $send->Email = $email;
